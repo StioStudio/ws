@@ -31,9 +31,9 @@ http.createServer(function (request, response) {
             response.end("404")
             break;
     }
-}).listen(80);
+}).listen(5001);
 
-const wss = new WebSocketServer({ port: 81 });
+const wss = new WebSocketServer({ port: 5000 });
 
 wss.on('connection', function connection(ws, req) {
     const ip = req.socket.remoteAddress;
