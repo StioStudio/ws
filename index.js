@@ -11,6 +11,12 @@ http.createServer(function (request, response) {
                 response.end(content, 'utf-8');
             });        
             break;
+        case "/http-example/":
+            fs.readFile("./client/chat.html", function (error, content) {
+                response.writeHead(200, { 'Content-Type': "text/html" });
+                response.end(content, 'utf-8');
+            });        
+            break;
 
         case "/http-example/chat.js":
             fs.readFile("./client/chat.js", function (error, content) {
@@ -18,8 +24,20 @@ http.createServer(function (request, response) {
                 response.end(content, 'utf-8');
             });        
             break;
+        case "/chat.js":
+            fs.readFile("./client/chat.js", function (error, content) {
+                response.writeHead(200, { 'Content-Type': "text/javascript" });
+                response.end(content, 'utf-8');
+            });        
+            break;
 
         case "/http-example/style.css":
+            fs.readFile("./client/style.css", function (error, content) {
+                response.writeHead(200, { 'Content-Type': "text/css" });
+                response.end(content, 'utf-8');
+            });        
+            break;
+        case "/style.css":
             fs.readFile("./client/style.css", function (error, content) {
                 response.writeHead(200, { 'Content-Type': "text/css" });
                 response.end(content, 'utf-8');
