@@ -10,7 +10,7 @@
 // });
 
 
-const socket = new WebSocket("ws://server.stio.studio/ws");
+const socket = new WebSocket("wss://server.stio.studio/ws");
 
 
 let form = document.getElementById('form');
