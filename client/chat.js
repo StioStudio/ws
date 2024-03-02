@@ -10,7 +10,7 @@
 // });
 
 
-const socket = new WebSocket("ws://127.0.0.1:5000");
+const socket = new WebSocket("ws://server.stio.studio/ws");
 
 
 let form = document.getElementById('form');
