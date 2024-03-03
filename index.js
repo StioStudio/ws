@@ -3,7 +3,7 @@ import * as http from 'http';
 import * as fs from 'fs';
 
 http.createServer(function (request, response) {
-    console.log(request.socket.remoteAddress, ": ", request.url)
+    console.log(request.url)
     switch (request.url) {
         case "/http-example":
             fs.readFile("./client/chat.html", function (error, content) {
@@ -54,9 +54,6 @@ http.createServer(function (request, response) {
 const wss = new WebSocketServer({ port: 5000, path: "/ws" });
 
 wss.on('connection', function connection(ws, req) {
-    const ip = req.socket.remoteAddress;
-    console.log(ip)
-
     ws.on('error', console.error);
     users.push({
         ws
