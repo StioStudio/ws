@@ -3,7 +3,7 @@ import * as http from 'http';
 import * as fs from 'fs';
 
 http.createServer(function (request, response) {
-    console.log(request.url)
+    console.log(request.socket.remoteAddress, ": ", request.url)
     switch (request.url) {
         case "/http-example":
             fs.readFile("./client/chat.html", function (error, content) {
